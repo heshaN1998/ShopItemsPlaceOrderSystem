@@ -4,6 +4,9 @@
  */
 package edu.ijse.layerd.service;
 
+import edu.ijse.layerd.service.custom.ItemService;
+import edu.ijse.layerd.service.custom.impl.ItemServiceImpl;
+
 /**
  *
  * @author ACER
@@ -24,7 +27,7 @@ public SuperService getService(ServiceType type){
     switch (type) {
         case ITEM:
             
-        return null;
+        return new ItemServiceImpl();
             
         case CUSTOMER:
             return null;
