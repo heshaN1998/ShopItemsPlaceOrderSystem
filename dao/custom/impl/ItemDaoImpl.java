@@ -42,10 +42,12 @@ public class ItemDaoImpl implements ItemDao{
     @Override
     public ArrayList<ItemEntity> getAll() throws Exception {
         ResultSet rst=CrudUtil.executeQuery("SELECT * FROM Item");
+        ArrayList<ItemEntity> itemEntities=new ArrayList<>();
         while(rst.next()){
-        itemEntitys.add(new ItemEntity(rst.getString("ItemCode"),rst.getString("Description"), rst.getString("PackSize"), rst.getDouble("unitPrize"), rst.getInt("QtyOnHand")));
+        itemEntities.add(new ItemEntity(rst.getString("ItemCode"),rst.getString("Description"), rst.getString("PackSize"), rst.getDouble("unitPrize"), rst.getInt("QtyOnHand")));
         }
-        return itemEntitys;
+       
+        return itemEntities;
     }
     
 }

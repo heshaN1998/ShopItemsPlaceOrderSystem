@@ -8,17 +8,17 @@ package edu.ijse.layerd.dto;
  *
  * @author ACER
  */
-public class itemDto {
+public class ItemDto {
  private String code;
  private String desc;
  private String pack;
- private Double unitPrize;
- private Integer qoh;
+ private double unitPrize;
+ private int qoh;
 
-    public itemDto() {
+    public ItemDto() {
     }
 
-    public itemDto(String code, String desc, String pack, Double unitPrize, Integer qoh) {
+    public ItemDto(String code, String desc, String pack, Double unitPrize, Integer qoh) {
         this.code = code;
         this.desc = desc;
         this.pack = pack;

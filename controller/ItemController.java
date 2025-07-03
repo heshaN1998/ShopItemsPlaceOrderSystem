@@ -4,7 +4,7 @@
  */
 package edu.ijse.layerd.controller;
 import java.util.ArrayList;
-import edu.ijse.layerd.dto.itemDto;
+import edu.ijse.layerd.dto.ItemDto;
 import edu.ijse.layerd.service.custom.ItemService;
 import edu.ijse.layerd.service.ServiceFactory;
 
@@ -18,10 +18,10 @@ public class ItemController {
     private ItemService itemService= (ItemService) ServiceFactory.getInstance().getService(ServiceFactory.ServiceType.ITEM);
     
     
-    public String saveItem(itemDto itemDto) throws Exception{
+    public String saveItem(ItemDto itemDto) throws Exception{
     return itemService.saveItem(itemDto);
     }
-        public String updateItem(itemDto itemDto) throws Exception{
+        public String updateItem(ItemDto itemDto) throws Exception{
     return itemService.updatetem(itemDto);
 }
             public String deleteItem(String code) throws Exception{
@@ -29,9 +29,9 @@ public class ItemController {
     return itemService.deleteItem(code);
             }
                 public String searchItem(String code) throws Exception{
-    return itemService.searchItem(code);
+                    return itemService.searchItem( code);
                 }
-                public  ArrayList<itemDto> getAllItem() throws Exception{
+                public  ArrayList<ItemDto> getAllItem() throws Exception{
                 return itemService.getAllItems();
                 }
                 

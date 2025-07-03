@@ -5,7 +5,7 @@
 package edu.ijse.layerd.view;
 
 import edu.ijse.layerd.controller.ItemController;
-import edu.ijse.layerd.dto.itemDto;
+import edu.ijse.layerd.dto.ItemDto;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -327,8 +327,8 @@ return false;
 tblitem.setModel(dtm);
 
     try {
-        ArrayList<itemDto> itemDtos= itemController.getAllItem();
-   for(itemDto itemDto :itemDtos){
+        ArrayList<ItemDto> itemDtos= itemController.getAllItem();
+   for(ItemDto itemDto :itemDtos){
    Object[] rowData = {itemDto.getCode(),itemDto.getDesc(),itemDto.getPack(),itemDto.getUnitPrize(),itemDto.getQoh()};
    dtm.addRow(rowData);
    }
@@ -338,11 +338,11 @@ tblitem.setModel(dtm);
 }
     private void searchItem(){
     
-String itemCode=(String) tblitem.getValueAt(tblitem.getSelectedRow(),1);
+String code=(String) tblitem.getValueAt(tblitem.getSelectedRow(),1);
 
     try {
        
-        itemDto iitemDto = itemController.searchItem(itemCode);
+        ItemDto iitemDto = itemController.searchItem(code);
         txtCode.setText(iitemDto.getCode());
         txtDesc.setText(iitemDto.getDesc());
         txtPack.setText(iitemDto.getPack());
@@ -357,20 +357,20 @@ String itemCode=(String) tblitem.getValueAt(tblitem.getSelectedRow(),1);
 
 private void saveItem(){
 
-    itemDto iitemDto=new itemDto(
+    ItemDto itemDto=new ItemDto(
     txtCode.getText(),
     txtDesc.getText(),
     txtPack.getText(),
     Double.parseDouble(txtUnitPrize.getText()),
-    Integer.parseInt(txtQoh.getText()) );
+    Integer.parseInt.(txtQoh.getText()));
     
     
     
-    System.out.println(iitemDto);
+    System.out.println(itemDto);
     
     
     try {
-        String resp = itemController.saveItem(iitemDto);
+        String resp = itemController.saveItem(itemDto);
         JOptionPane.showMessageDialog(this, resp);
         loadTable();
         clear();
@@ -382,7 +382,7 @@ private void saveItem(){
 
 private void updateItem(){
 
-    itemDto iitemDto = new itemDto(
+    ItemDto iitemDto = new ItemDto(
     txtCode.getText(),
     txtDesc.getText(),
     txtPack.getText(),

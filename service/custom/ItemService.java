@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
  */
 package edu.ijse.layerd.service.custom;
-import edu.ijse.layerd.dto.itemDto;
+import edu.ijse.layerd.dto.ItemDto;
 import java.util.ArrayList;
 import edu.ijse.layerd.service.SuperService;
 
@@ -12,11 +12,11 @@ import edu.ijse.layerd.service.SuperService;
  * @author ACER
  */
 public interface ItemService extends SuperService{
-   public String saveItem(itemDto itemDto) throws Exception; 
-      public String updatetem(itemDto itemDto) throws Exception; 
-            public String deleteItem(String itemCode) throws Exception; 
-               public String searchItem(String itemCode) throws Exception;
-               public ArrayList<itemDto> getAllItems() throws Exception;
+   public String saveItem(ItemDto itemDto) throws Exception; 
+      public String updatetem(ItemDto itemDto) throws Exception; 
+            public String deleteItem(String id) throws Exception; 
+               public String searchItem(String id) throws Exception;
+               public ArrayList<ItemDto> getAllItems() throws Exception;
                
                
 }
