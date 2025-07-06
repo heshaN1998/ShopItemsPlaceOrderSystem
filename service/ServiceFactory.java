@@ -4,6 +4,7 @@
  */
 package edu.ijse.layerd.service;
 
+import edu.ijse.layerd.service.custom.CustomerServiceImpl;
 import edu.ijse.layerd.service.custom.ItemService;
 import edu.ijse.layerd.service.custom.impl.ItemServiceImpl;
 
@@ -30,7 +31,7 @@ public SuperService getService(ServiceType type){
         return new ItemServiceImpl();
             
         case CUSTOMER:
-            return null;
+            return new CustomerServiceImpl();
         case ORDER:
             return null;
         default:

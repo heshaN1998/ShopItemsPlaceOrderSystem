@@ -5,7 +5,10 @@
 package edu.ijse.layerd.dao;
 import edu.ijse.layerd.dao.DaoFactory;
 import edu.ijse.layerd.dao.custom.ItemDao;
+import edu.ijse.layerd.dao.custom.impl.CustomerDaoImpl;
 import edu.ijse.layerd.dao.custom.impl.ItemDaoImpl;
+import edu.ijse.layerd.dao.custom.impl.OrderDaoImpl;
+import edu.ijse.layerd.dao.custom.impl.OrderDetailDaoImpl;
 
 /**
  *
@@ -27,15 +30,16 @@ public class DaoFactory {
             case ITEM:
                 return new ItemDaoImpl();
                case CUSTOMER:
-                return null;
+                return new CustomerDaoImpl();
                 case ORDER:
-                return null;
+                return new OrderDaoImpl();
                 case ORDER_DETAIL:
-                return null;
+                return new OrderDetailDaoImpl();
             default:
                 return null;
         }
     }
+    
     public enum DaoTypes{
     ITEM,CUSTOMER,ORDER,ORDER_DETAIL
     }
